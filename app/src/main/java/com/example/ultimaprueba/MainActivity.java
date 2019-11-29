@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Inscripciones_bd.agregarCursos(editUsuarios.getText().toString(),editRamos.getText().toString(),editProfesion.getText().toString());
-                Toast.makeText(getApplicationContext(), "SE AGREGO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "SE AGREGO", Toast.LENGTH_SHORT).show();
             }
         });
     }
