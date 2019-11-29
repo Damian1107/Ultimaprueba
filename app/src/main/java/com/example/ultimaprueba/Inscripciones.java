@@ -10,7 +10,7 @@ public class Inscripciones extends SQLiteOpenHelper {
 
     private static final String NOMBRE_BD = "Inscripciones.bd";
     private static final int VERSION_BD = 1;
-    private static final String TABLA_CURSOS = "CREATE TABLE CURSOS(USUARIOS TEXT PRIMARY KEY, RAMOS TEXT, PROFESION TEXT)";
+    private static final String TABLA_RAMOS = "CREATE TABLE RAMOS(USUARIOS TEXT PRIMARY KEY, RAMOS TEXT, PROFESION TEXT)";
 
     public Inscripciones(Context context) {
         super(context, NOMBRE_BD, null, VERSION_BD);
@@ -18,13 +18,13 @@ public class Inscripciones extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase){
-        sqLiteDatabase.execSQL(TABLA_CURSOS);
+        sqLiteDatabase.execSQL(TABLA_RAMOS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1){
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLA_CURSOS);
-        sqLiteDatabase.execSQL(TABLA_CURSOS);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLA_RAMOS);
+        sqLiteDatabase.execSQL(TABLA_RAMOS);
     }
 
     public void agregarCursos(String usuarios, String ramos, String profesion){
